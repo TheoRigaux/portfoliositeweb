@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — [Ton Prénom]</title>
+  <title>Portfolio — Théo Rigaux · TunaryJump</title>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts : Orbitron (display tech) + Syne (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -19,17 +17,17 @@
         extend: {
           fontFamily: {
             display: ['Orbitron', 'sans-serif'],
-            body: ['Syne', 'sans-serif'],
+            body:    ['Syne', 'sans-serif'],
           },
           colors: {
-            bg:        '#050810',
-            surface:   '#0c1120',
-            border:    '#1a2540',
-            cyan:      '#00f0ff',
-            magenta:   '#ff00aa',
-            lime:      '#a8ff3e',
-            muted:     '#4a5878',
-            text:      '#c8d6f0',
+            bg:      '#050810',
+            surface: '#0c1120',
+            border:  '#1a2540',
+            cyan:    '#00f0ff',
+            magenta: '#ff00aa',
+            lime:    '#a8ff3e',
+            muted:   '#4a5878',
+            text:    '#c8d6f0',
           },
           animation: {
             'flicker':    'flicker 4s infinite',
@@ -40,27 +38,27 @@
           },
           keyframes: {
             flicker: {
-              '0%,100%': { opacity: '1' },
-              '92%':     { opacity: '1' },
-              '93%':     { opacity: '0.4' },
-              '94%':     { opacity: '1' },
-              '96%':     { opacity: '0.6' },
-              '97%':     { opacity: '1' },
+              '0%,100%': { opacity:'1' },
+              '92%':     { opacity:'1' },
+              '93%':     { opacity:'0.4' },
+              '94%':     { opacity:'1' },
+              '96%':     { opacity:'0.6' },
+              '97%':     { opacity:'1' },
             },
             scan: {
-              '0%':   { transform: 'translateY(-100%)' },
-              '100%': { transform: 'translateY(100vh)' },
+              '0%':   { transform:'translateY(-100%)' },
+              '100%': { transform:'translateY(100vh)' },
             },
             float: {
-              '0%,100%': { transform: 'translateY(0px)' },
-              '50%':     { transform: 'translateY(-16px)' },
+              '0%,100%': { transform:'translateY(0px)' },
+              '50%':     { transform:'translateY(-16px)' },
             },
             glitch: {
-              '0%':   { 'clip-path': 'inset(40% 0 61% 0)', transform: 'translate(-2px, 0)' },
-              '25%':  { 'clip-path': 'inset(92% 0 1% 0)',  transform: 'translate(2px, 0)' },
-              '50%':  { 'clip-path': 'inset(20% 0 50% 0)', transform: 'translate(-1px, 0)' },
-              '75%':  { 'clip-path': 'inset(60% 0 30% 0)', transform: 'translate(3px, 0)' },
-              '100%': { 'clip-path': 'inset(85% 0 5% 0)',  transform: 'translate(-2px, 0)' },
+              '0%':   { 'clip-path':'inset(40% 0 61% 0)', transform:'translate(-2px,0)' },
+              '25%':  { 'clip-path':'inset(92% 0 1% 0)',  transform:'translate(2px,0)' },
+              '50%':  { 'clip-path':'inset(20% 0 50% 0)', transform:'translate(-1px,0)' },
+              '75%':  { 'clip-path':'inset(60% 0 30% 0)', transform:'translate(3px,0)' },
+              '100%': { 'clip-path':'inset(85% 0 5% 0)',  transform:'translate(-2px,0)' },
             },
           },
           boxShadow: {
@@ -83,7 +81,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Grid de fond ── */
     body::before {
       content: '';
       position: fixed;
@@ -96,7 +93,6 @@
       z-index: 0;
     }
 
-    /* ── Ligne de scan CRT ── */
     body::after {
       content: '';
       position: fixed;
@@ -108,13 +104,11 @@
       z-index: 999;
     }
 
-    /* ── Navbar ── */
     nav {
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
 
-    /* ── Glitch layers ── */
     .glitch-wrap { position: relative; display: inline-block; }
     .glitch-wrap::before,
     .glitch-wrap::after {
@@ -135,7 +129,6 @@
       animation-delay: 0.3s;
     }
 
-    /* ── Barre de compétence ── */
     .skill-bar { position: relative; height: 4px; background: #1a2540; border-radius: 99px; overflow: hidden; }
     .skill-bar-fill {
       height: 100%;
@@ -145,7 +138,6 @@
       transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
     }
 
-    /* ── Card projet ── */
     .project-card {
       border: 1px solid #1a2540;
       background: rgba(12,17,32,0.8);
@@ -157,7 +149,6 @@
       transform: translateY(-4px);
     }
 
-    /* ── Tag badge ── */
     .tag {
       font-family: 'Orbitron', sans-serif;
       font-size: 0.6rem;
@@ -167,38 +158,112 @@
       border: 1px solid;
     }
 
-    /* ── Separator neon ── */
     .neon-sep {
       height: 1px;
       background: linear-gradient(90deg, transparent, #00f0ff, transparent);
       opacity: 0.3;
     }
 
-    /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #050810; }
     ::-webkit-scrollbar-thumb { background: #00f0ff44; border-radius: 4px; }
 
-    /* ── Section reveal ── */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .media-placeholder {
+      background: linear-gradient(135deg, #0c1120 0%, #1a2540 100%);
+      border: 1px dashed #1a2540;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #4a5878;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      transition: border-color 0.3s;
+    }
+    .media-placeholder:hover { border-color: #00f0ff44; }
+    .media-placeholder .icon { font-size: 2rem; opacity: 0.4; }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid #1a2540;
+      border-radius: 2px;
+      background: rgba(12,17,32,0.6);
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .social-link:hover { border-color: rgba(0,240,255,0.4); background: rgba(0,240,255,0.05); }
+    .social-link .abbr {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .timeline-item { position: relative; padding-left: 2rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00f0ff;
+      box-shadow: 0 0 10px rgba(0,240,255,0.6);
+      flex-shrink: 0;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 18px;
+      width: 1px;
+      bottom: -12px;
+      background: linear-gradient(to bottom, #1a2540, transparent);
+    }
+    .timeline-item:last-child::after { display: none; }
+
+    .skill-badge {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 2px;
+      border: 1px solid;
+      white-space: nowrap;
+    }
+
+    /* Styles d'agrandissement au survol pour indiquer le clic */
+    .lightbox-trigger { cursor: pointer; transition: transform 0.3s, border-color 0.3s; }
+    .lightbox-trigger:hover { transform: scale(1.02); border-color: #00f0ff; }
   </style>
 </head>
 
 <body class="min-h-screen">
 
-  <!-- ═══════════════════════════════════════════
-       NAVBAR FIXE
-  ═══════════════════════════════════════════ -->
   <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/70">
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
 
-      <!-- Logo -->
       <a href="#hero" class="font-display font-bold text-cyan tracking-widest text-sm animate-flicker">
-        &lt;TON_PSEUDO /&gt;
+        Théo Rigaux
       </a>
 
-      <!-- Liens desktop -->
       <ul class="hidden md:flex gap-8 text-xs font-display tracking-widest text-muted uppercase">
         <li><a href="#about"    class="hover:text-cyan transition-colors duration-200">À propos</a></li>
         <li><a href="#projects" class="hover:text-cyan transition-colors duration-200">Projets</a></li>
@@ -206,68 +271,65 @@
         <li><a href="#footer"   class="hover:text-cyan transition-colors duration-200">Contact</a></li>
       </ul>
 
-      <!-- CTA -->
-      <a href="mailto:ton@email.com"
-         class="hidden md:inline-flex items-center gap-2 text-xs font-display tracking-widest
-                border border-cyan text-cyan px-4 py-2 rounded-sm
-                hover:bg-cyan hover:text-bg transition-all duration-200">
-        <span class="text-lime">▶</span> Contacte-moi
-      </a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="assets/files/cv-theo-rigaux.pdf" download
+           class="inline-flex items-center gap-2 text-xs font-display tracking-widest
+                  border border-lime/50 text-lime px-4 py-2 rounded-sm
+                  hover:bg-lime hover:text-bg transition-all duration-200">
+          <span>↓</span> CV
+        </a>
+        <a href="mailto:contact@theorigaux.be"
+           class="inline-flex items-center gap-2 text-xs font-display tracking-widest
+                  border border-cyan text-cyan px-4 py-2 rounded-sm
+                  hover:bg-cyan hover:text-bg transition-all duration-200">
+          <span class="text-lime">▶</span> Me contacter
+        </a>
+      </div>
 
-      <!-- Burger mobile -->
       <button id="burger" class="md:hidden text-cyan text-2xl leading-none" aria-label="Menu">☰</button>
     </div>
 
-    <!-- Menu mobile -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">
       <ul class="flex flex-col gap-0 text-xs font-display tracking-widest">
         <li><a href="#about"    class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">À propos</a></li>
         <li><a href="#projects" class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Projets</a></li>
         <li><a href="#goals"    class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Objectifs</a></li>
-        <li><a href="#footer"   class="block px-6 py-4 text-muted hover:text-cyan transition-colors"                        onclick="closeMobile()">Contact</a></li>
+        <li><a href="#footer"   class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Contact</a></li>
+        <li><a href="assets/files/cv-theo-rigaux.pdf" download class="block px-6 py-4 text-lime font-display text-xs tracking-widest">↓ Télécharger CV</a></li>
       </ul>
     </div>
   </nav>
 
 
-  <!-- ═══════════════════════════════════════════
-       HERO — SECTION ACCUEIL
-  ═══════════════════════════════════════════ -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-6 pt-16 overflow-hidden">
 
-    <!-- Orbes d'ambiance -->
     <div class="absolute top-1/3 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-10 animate-pulse-slow"
-         style="background: radial-gradient(circle, #00f0ff, transparent)"></div>
+         style="background:radial-gradient(circle,#00f0ff,transparent)"></div>
     <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-10 animate-pulse-slow"
-         style="background: radial-gradient(circle, #ff00aa, transparent); animation-delay:2s"></div>
+         style="background:radial-gradient(circle,#ff00aa,transparent);animation-delay:2s"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto">
 
-      <!-- Étiquette status -->
       <div class="inline-flex items-center gap-2 border border-lime/30 bg-lime/5 text-lime
                   text-xs font-display tracking-widest px-4 py-2 rounded-sm mb-8">
         <span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span>
-        DISPONIBLE — ALTERNANCE / STAGE 2025-2026
+        EN RECHERCHE DE STAGE — 2026-2027 · WALLONIE, BELGIQUE
       </div>
 
-      <!-- Titre principal avec effet glitch -->
       <h1 class="font-display font-black text-5xl md:text-7xl lg:text-8xl leading-none mb-4 text-white">
-        <span class="glitch-wrap" data-text="[TON PRÉNOM]">[TON PRÉNOM]</span>
+        <span class="glitch-wrap" data-text="THÉO RIGAUX">THÉO RIGAUX</span>
       </h1>
 
-      <!-- Sous-titre accrocheur -->
       <p class="font-display text-cyan text-lg md:text-2xl tracking-widest mb-6">
-        ÉTUDIANT EN INFORMATIQUE <span class="text-muted">/</span> BUILDER <span class="text-muted">/</span> GAMER
+        ÉTUDIANT B2 INFORMATIQUE <span class="text-muted">/</span> BUILDER <span class="text-muted">/</span> GAMER <span class="text-muted">/</span> CRÉATEUR
       </p>
 
-      <!-- Accroche -->
       <p class="text-text text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-        <!-- ✏️ Remplis cette phrase avec ta propre accroche -->
-        Je transforme la curiosité technologique en projets concrets — du code propre, des idées ambitieuses,
-        et un œil rivé sur l'avenir du numérique et de l'esport.
+        Touche-à-tout de la tech depuis l'enfance, gamer passionné, créateur de contenu
+        et futur ingénieur. Je transforme chaque passion en compétence — du code propre,
+        des projets ambitieux et une vision claire de l'avenir que je veux construire.
       </p>
 
-      <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#projects"
            class="inline-flex items-center justify-center gap-2
@@ -275,6 +337,13 @@
                   px-8 py-4 rounded-sm font-bold
                   hover:shadow-cyan-glow transition-all duration-300">
           <span>→</span> Voir mes projets
+        </a>
+        <a href="assets/files/cv-theo-rigaux.pdf" download
+           class="inline-flex items-center justify-center gap-2
+                  border border-lime text-lime font-display text-xs tracking-widest
+                  px-8 py-4 rounded-sm
+                  hover:bg-lime hover:text-bg transition-all duration-300">
+          <span>↓</span> Télécharger mon CV
         </a>
         <a href="#goals"
            class="inline-flex items-center justify-center gap-2
@@ -285,7 +354,6 @@
         </a>
       </div>
 
-      <!-- Indicateur de scroll -->
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float text-muted text-xs font-display tracking-widest flex flex-col items-center gap-2">
         <span>SCROLL</span>
         <span class="text-cyan text-lg">↓</span>
@@ -296,114 +364,214 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ═══════════════════════════════════════════
-       SECTION — À PROPOS
-  ═══════════════════════════════════════════ -->
   <section id="about" class="relative py-28 px-6">
     <div class="max-w-6xl mx-auto">
 
-      <!-- En-tête de section -->
       <div class="reveal mb-16">
         <p class="font-display text-xs text-cyan tracking-widest mb-3">// 01 — À PROPOS</p>
         <h2 class="font-display font-black text-4xl md:text-5xl text-white">MON UNIVERS</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
 
-        <!-- Texte de présentation -->
-        <div class="reveal">
-          <div class="space-y-5 text-text leading-relaxed">
-            <p>
-              <!-- ✏️ Présente-toi en quelques lignes : d'où tu viens, depuis quand tu es passionné d'informatique -->
-              Passionné de tech depuis l'enfance, j'ai grandi à démonter (et remonter !) mes premiers PC,
-              à explorer les jeux vidéo comme d'autres explorent des encyclopédies. L'informatique n'est pas
-              un métier pour moi — c'est un mode de vie.
-            </p>
-            <p>
-              <!-- ✏️ Ta formation actuelle -->
-              Actuellement en formation <strong class="text-cyan">[Ton diplôme — ex : BTS SIO / Licence Info / BUT]</strong>
-              à <strong class="text-cyan">[Ton école]</strong>, je développe mes compétences en développement
-              web, algorithmique et administration système.
-            </p>
-            <p>
-              <!-- ✏️ Lien gaming / esport -->
-              En parallèle, le gaming a forgé ma rigueur, mon goût pour la stratégie et ma capacité à
-              travailler en équipe sous pression — des compétences que j'applique directement dans mes projets
-              et mon aventure Esport avec <strong class="text-magenta">Tunary</strong>.
-            </p>
+        <div class="reveal space-y-5 text-text leading-relaxed">
+          <p>
+            À 3 ans, pendant que d'autres apprenaient à dessiner, je naviguais sur internet
+            mieux que mes parents et bidouillais l'ordinateur familial pour en faire ce que je voulais —
+            réalisant des actions qu'ils ne maîtrisaient pas encore. La curiosité technique, c'est inné
+            chez moi : pas une décision, une évidence.
+          </p>
+          <p>
+            Gamer passionné depuis mes 6 ans, j'ai grandi dans les jeux compétitifs qui forgent la rigueur,
+            le sens de la stratégie et la capacité à performer sous pression en équipe. Rapidement, la
+            création de contenu est devenue une extension naturelle de cette passion : streamer, monter
+            des vidéos, construire une communauté engagée.
+          </p>
+          <p>
+            L'informatique est la suite logique de tout ça. Actuellement en
+            <strong class="text-cyan">B2 Informatique (section TI) à l'IESN Henallux</strong> (Namur, Belgique),
+            je concrétise cette passion en compétences réelles — du développement logiciel à l'embarqué,
+            en passant par les réseaux, l'administration systèmes et les bases de données.
+          </p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="tag border-cyan/40   text-cyan">PYTHON</span>
+            <span class="tag border-lime/40   text-lime">EMBARQUÉ</span>
+            <span class="tag border-magenta/40 text-magenta">GAMING</span>
+            <span class="tag border-cyan/40   text-cyan">RÉSEAUX</span>
+            <span class="tag border-lime/40   text-lime">POSTGRESQL</span>
+            <span class="tag border-magenta/40 text-magenta">STREAMING</span>
           </div>
 
-          <!-- Badges passion -->
-          <div class="flex flex-wrap gap-3 mt-8">
-            <!-- ✏️ Ajoute / retire des badges selon tes vraies passions -->
-            <span class="tag border-cyan/40  text-cyan">DEV WEB</span>
-            <span class="tag border-lime/40  text-lime">GAMING</span>
-            <span class="tag border-magenta/40 text-magenta">ESPORT</span>
-            <span class="tag border-cyan/40  text-cyan">LINUX</span>
-            <span class="tag border-lime/40  text-lime">IA / ML</span>
-            <span class="tag border-magenta/40 text-magenta">CYBERSEC</span>
+          <div class="flex items-center gap-2 pt-2 text-muted text-xs font-display tracking-wider">
+            <span class="text-cyan">📍</span>
+            <span>Wallonie, Belgique</span>
           </div>
         </div>
 
-        <!-- Skills / Stack -->
-        <div class="reveal space-y-6">
-          <h3 class="font-display text-xs text-muted tracking-widest mb-6">STACK & COMPÉTENCES</h3>
-
-          <!-- ✏️ Ajuste les pourcentages selon ton niveau réel -->
-          <div>
-            <div class="flex justify-between text-xs font-display text-text mb-2">
-              <span>HTML / CSS</span><span class="text-cyan">85%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-display text-text mb-2">
-              <span>JavaScript</span><span class="text-cyan">70%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-display text-text mb-2">
-              <span>Python</span><span class="text-cyan">65%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-display text-text mb-2">
-              <span>SQL / Bases de données</span><span class="text-cyan">60%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-display text-text mb-2">
-              <!-- ✏️ Ajoute ta technologie ici -->
-              <span>[Ta techno]</span><span class="text-cyan">XX%</span>
-            </div>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
-          </div>
-
-          <!-- Stats rapides -->
-          <div class="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-border">
-            <div class="text-center">
-              <!-- ✏️ -->
-              <p class="font-display font-black text-3xl text-cyan">X+</p>
+        <div class="reveal">
+          <div class="grid grid-cols-3 gap-4 mb-10">
+            <div class="text-center border border-border rounded-sm p-4 bg-surface/50">
+              <p class="font-display font-black text-3xl text-cyan">3+</p>
               <p class="text-xs text-muted mt-1 tracking-wide">Projets</p>
             </div>
-            <div class="text-center">
-              <!-- ✏️ -->
-              <p class="font-display font-black text-3xl text-magenta">Xans</p>
+            <div class="text-center border border-border rounded-sm p-4 bg-surface/50">
+              <p class="font-display font-black text-3xl text-magenta">20ans</p>
               <p class="text-xs text-muted mt-1 tracking-wide">De passion tech</p>
             </div>
-            <div class="text-center">
+            <div class="text-center border border-border rounded-sm p-4 bg-surface/50">
               <p class="font-display font-black text-3xl text-lime">∞</p>
               <p class="text-xs text-muted mt-1 tracking-wide">Curiosité</p>
             </div>
           </div>
+
+          <div class="border border-lime/20 bg-lime/5 rounded-sm p-5 flex items-center justify-between gap-4">
+            <div>
+              <p class="font-display text-xs text-lime tracking-widest mb-1">MON CV</p>
+              <p class="text-muted text-xs leading-relaxed">Version publique — disponible en téléchargement.</p>
+            </div>
+            <a href="assets/files/cv-theo-rigaux.pdf" download
+               class="flex-shrink-0 inline-flex items-center gap-2 font-display text-xs tracking-widest
+                      bg-lime text-bg px-4 py-2.5 rounded-sm font-bold hover:shadow-lime-glow transition-all duration-200">
+              ↓ CV
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="reveal mb-16">
+        <p class="font-display text-xs text-cyan tracking-widest mb-2">// PARCOURS</p>
+        <h3 class="font-display font-black text-2xl text-white mb-10">FORMATION</h3>
+
+        <div class="space-y-10 max-w-3xl">
+
+          <div class="timeline-item">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="font-display text-xs text-muted tracking-widest">FÉV. 2025 — PRÉSENT</span>
+              <span class="tag border-lime/40 text-lime">EN COURS</span>
+            </div>
+            <h4 class="font-display font-bold text-white text-base mb-1">
+              Bachelier en Informatique — TI
+            </h4>
+            <p class="text-cyan text-xs font-display tracking-wider mb-2">IESN HENALLUX · NAMUR, BELGIQUE</p>
+            <p class="text-muted text-sm leading-relaxed">
+              Orientation Technologies de l'Informatique. Focus sur les infrastructures réseaux,
+              le développement d'applications (N-Tier, embarqué) et l'administration des systèmes.
+              Projets réels en équipe dès la première année.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="font-display text-xs text-muted tracking-widest">SEPT. 2023 — JANV. 2025</span>
+              <span class="tag border-cyan/30 text-muted">TERMINÉ</span>
+            </div>
+            <h4 class="font-display font-bold text-white text-base mb-1">
+              Parcours Universitaire
+            </h4>
+            <p class="text-cyan text-xs font-display tracking-wider mb-2">UNAMUR · NAMUR, BELGIQUE</p>
+            <p class="text-muted text-sm leading-relaxed">
+              Bases solides en algorithmique et développement. Premiers projets en Python
+              incluant Battle Sheep — un jeu de stratégie avec IA intégrée.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="font-display text-xs text-cyan tracking-widest mb-2">// CERTIFICATIONS</p>
+        <h3 class="font-display font-black text-2xl text-white mb-8">FORMATIONS COMPLÉMENTAIRES</h3>
+
+        <div class="max-w-3xl">
+          <a href="https://www.udemy.com/certificate/UC-f98e2313-b623-4d25-88ec-a79cebe22c9b/"
+             target="_blank"
+             class="flex items-center gap-6 border border-border bg-surface/50 rounded-sm p-5
+                    hover:border-cyan/30 transition-all duration-200 group">
+            <div class="w-12 h-12 rounded-sm border border-magenta/30 bg-magenta/10 flex items-center justify-center
+                        text-magenta font-display font-black text-xs flex-shrink-0">U</div>
+            <div class="flex-1 min-w-0">
+              <p class="font-display text-white text-xs tracking-wide mb-1 group-hover:text-cyan transition-colors">
+                Formation de base au montage vidéo
+              </p>
+              <p class="text-muted text-xs">Udemy · 2024 · Certificat vérifié</p>
+              <p class="text-muted text-xs mt-1 leading-relaxed">
+                Compétence clé pour la création de contenu, la communication de projets et le streaming.
+              </p>
+            </div>
+            <span class="text-muted text-xs font-display tracking-widest group-hover:text-cyan transition-colors flex-shrink-0">→ VOIR</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="neon-sep"></div>
+
+
+  <section id="skills" class="relative py-28 px-6 bg-surface/20">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="reveal mb-16">
+        <p class="font-display text-xs text-cyan tracking-widest mb-3">// 02 — COMPÉTENCES</p>
+        <h2 class="font-display font-black text-4xl md:text-5xl text-white">MA STACK</h2>
+      </div>
+
+      <div class="space-y-10">
+
+        <div class="reveal">
+          <h3 class="font-display text-xs text-cyan tracking-widest mb-4">▸ SYSTÈME &amp; ADMINISTRATION</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">Administration Systèmes</span>
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">Virtualisation &amp; Cloud</span>
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">Systèmes d'Exploitation</span>
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">Sécurité Informatique</span>
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">Gestion de serveurs &amp; NAS Linux</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="font-display text-xs text-lime tracking-widest mb-4">▸ RÉSEAUX &amp; TÉLÉCOMS</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Infrastructures Réseaux</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Services d'Infrastructure</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Configuration de protocoles</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="font-display text-xs text-magenta tracking-widest mb-4">▸ DÉVELOPPEMENT &amp; PROGRAMMATION</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">Python</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">C</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">Bash</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">PowerShell</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">Architecture N-Tier (MVC Pur)</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">Threading asynchrone</span>
+            <span class="skill-badge border-magenta/30 text-text bg-magenta/5">Git / GitHub</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="font-display text-xs text-cyan tracking-widest mb-4">▸ DONNÉES</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">PostgreSQL</span>
+            <span class="skill-badge border-cyan/30 text-text bg-cyan/5">SQL</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="font-display text-xs text-lime tracking-widest mb-4">▸ CRÉATION DE CONTENU &amp; SOFT SKILLS</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Gestion de communauté</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">OBS Studio / Streaming en direct</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Montage vidéo</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Communication professionnelle</span>
+            <span class="skill-badge border-lime/30 text-text bg-lime/5">Gestion de projet</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -411,167 +579,201 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ═══════════════════════════════════════════
-       SECTION — PROJETS
-  ═══════════════════════════════════════════ -->
   <section id="projects" class="relative py-28 px-6">
     <div class="max-w-6xl mx-auto">
 
       <div class="reveal mb-16">
-        <p class="font-display text-xs text-cyan tracking-widest mb-3">// 02 — PROJETS</p>
+        <p class="font-display text-xs text-cyan tracking-widest mb-3">// 03 — PROJETS</p>
         <h2 class="font-display font-black text-4xl md:text-5xl text-white">CE QUE J'AI CONSTRUIT</h2>
       </div>
 
-      <!-- Projets scolaires -->
-      <h3 class="reveal font-display text-sm tracking-widest text-lime mb-8">▸ PROJETS SCOLAIRES</h3>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-
-        <!-- Carte projet scolaire 1 -->
-        <article class="reveal project-card rounded-sm p-6">
-          <div class="flex items-start justify-between mb-4">
-            <span class="font-display text-2xl">🛒</span>
-            <!-- ✏️ Remplace par l'icône qui correspond -->
-            <span class="tag border-cyan/30 text-cyan">SCOLAIRE</span>
-          </div>
-          <!-- ✏️ Remplace par le nom de ton projet -->
-          <h4 class="font-display font-bold text-white text-base mb-2">[Nom du Projet 1]</h4>
-          <!-- ✏️ Décris ce que tu as fait, les objectifs pédagogiques -->
-          <p class="text-muted text-sm leading-relaxed mb-4">
-            Description du projet scolaire. Contexte, objectif, ce que tu as appris ou réalisé.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <!-- ✏️ Tes technologies utilisées -->
-            <span class="tag border-muted/30 text-muted">HTML</span>
-            <span class="tag border-muted/30 text-muted">PHP</span>
-            <span class="tag border-muted/30 text-muted">MySQL</span>
-          </div>
-          <a href="#" class="text-xs font-display text-cyan hover:underline">→ Voir le projet</a>
-        </article>
-
-        <!-- Carte projet scolaire 2 -->
-        <article class="reveal project-card rounded-sm p-6">
-          <div class="flex items-start justify-between mb-4">
-            <span class="font-display text-2xl">💻</span>
-            <span class="tag border-cyan/30 text-cyan">SCOLAIRE</span>
-          </div>
-          <h4 class="font-display font-bold text-white text-base mb-2">[Nom du Projet 2]</h4>
-          <p class="text-muted text-sm leading-relaxed mb-4">
-            Description du projet scolaire. Contexte, objectif, ce que tu as appris ou réalisé.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tag border-muted/30 text-muted">Python</span>
-            <span class="tag border-muted/30 text-muted">Tkinter</span>
-          </div>
-          <a href="#" class="text-xs font-display text-cyan hover:underline">→ Voir le projet</a>
-        </article>
-
-        <!-- Carte projet scolaire 3 -->
-        <article class="reveal project-card rounded-sm p-6">
-          <div class="flex items-start justify-between mb-4">
-            <span class="font-display text-2xl">📊</span>
-            <span class="tag border-cyan/30 text-cyan">SCOLAIRE</span>
-          </div>
-          <h4 class="font-display font-bold text-white text-base mb-2">[Nom du Projet 3]</h4>
-          <p class="text-muted text-sm leading-relaxed mb-4">
-            Description du projet scolaire. Contexte, objectif, ce que tu as appris ou réalisé.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tag border-muted/30 text-muted">SQL</span>
-            <span class="tag border-muted/30 text-muted">Excel</span>
-          </div>
-          <a href="#" class="text-xs font-display text-cyan hover:underline">→ Voir le projet</a>
-        </article>
+      <div class="reveal project-card rounded-sm p-8 mb-6">
+        <div class="flex items-center justify-between mb-5">
+          <span class="tag border-cyan/40 text-cyan">UNIVERSITÉ · UNAMUR</span>
+          <a href="https://github.com/TheoRigaux/Projet_Battle_sheep" target="_blank"
+             class="flex items-center gap-2 text-xs font-display text-muted hover:text-cyan transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <h4 class="font-display font-black text-white text-2xl mb-4 leading-tight">
+          Battle Sheep<br><span class="text-cyan text-base font-semibold">Jeu de Stratégie &amp; IA</span>
+        </h4>
+        <p class="text-text text-sm leading-relaxed mb-6 max-w-3xl">
+          Développement en Python d'un jeu de conquête de territoire au tour par tour sur grille.
+          Implémentation des mécaniques de jeu, de la capture de ressources et d'une Intelligence
+          Artificielle autonome et adaptative capable d'analyser l'état du plateau et d'ajuster
+          sa stratégie dynamiquement face au joueur en temps réel.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag border-cyan/40 text-cyan">PYTHON</span>
+          <span class="tag border-cyan/40 text-cyan">INTELLIGENCE ARTIFICIELLE</span>
+          <span class="tag border-cyan/40 text-cyan">ALGORITHMIQUE</span>
+        </div>
       </div>
 
-      <!-- Projets personnels -->
-      <h3 class="reveal font-display text-sm tracking-widest text-magenta mb-8">▸ PROJETS PERSONNELS</h3>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="reveal project-card rounded-sm p-8 mb-6">
+        <div class="flex items-center justify-between mb-6">
+          <span class="tag border-lime/40 text-lime">HAUTE ÉCOLE · IESN HENALLUX</span>
+          <a href="https://github.com/TheoRigaux/projet-robot-lora" target="_blank"
+             class="flex items-center gap-2 text-xs font-display text-muted hover:text-lime transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
 
-        <!-- Carte projet perso 1 — mise en avant -->
-        <article class="reveal project-card rounded-sm p-8 md:col-span-2 lg:col-span-1
-                        border-magenta/20 hover:border-magenta/50">
-          <div class="flex items-start justify-between mb-4">
-            <span class="font-display text-3xl">🎮</span>
-            <span class="tag border-magenta/40 text-magenta">PERSO</span>
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+          <div class="w-full lg:w-48 flex-shrink-0">
+            <p class="font-display text-xs text-muted tracking-widest mb-2">DÉMO VIDÉO</p>
+            <div class="relative w-full rounded-sm overflow-hidden border border-border bg-bg mb-2"
+                 style="aspect-ratio:9/16;">
+              <iframe
+                id="robot-video"
+                src="https://www.youtube.com/embed/63XcM4CdG_I"
+                title="Démo Robot LoRa"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full">
+              </iframe> 
+            </div>
+            <button onclick="openVideoLightbox('63XcM4CdG_I')" 
+                    class="w-full text-center font-display text-[0.65rem] tracking-widest border border-border py-1.5 bg-surface/40 rounded-sm hover:border-lime/40 text-muted hover:text-white transition-all">
+              🔍 AGRANDIR LA VIDÉO
+            </button>
           </div>
-          <h4 class="font-display font-bold text-white text-xl mb-3">[Nom du Projet Perso 1]</h4>
-          <p class="text-text text-sm leading-relaxed mb-5">
-            <!-- ✏️ Un projet perso que tu as construit seul ou en équipe, lié au gaming / tech -->
-            Description de ton projet personnel phare. Pourquoi tu l'as fait, comment tu l'as réalisé,
-            quels problèmes tu as résolus et ce que tu en retires.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <span class="tag border-magenta/30 text-magenta">JavaScript</span>
-            <span class="tag border-magenta/30 text-magenta">Node.js</span>
-            <span class="tag border-magenta/30 text-magenta">Discord.js</span>
-          </div>
-          <div class="flex gap-4">
-            <a href="#" class="text-xs font-display text-magenta hover:underline">→ GitHub</a>
-            <a href="#" class="text-xs font-display text-text hover:text-white">→ Demo live</a>
-          </div>
-        </article>
 
-        <!-- Carte projet perso 2 -->
-        <article class="reveal project-card rounded-sm p-6">
-          <div class="flex items-start justify-between mb-4">
-            <span class="font-display text-2xl">🌐</span>
-            <span class="tag border-lime/40 text-lime">PERSO</span>
+          <div class="flex-1 min-w-0">
+            <h4 class="font-display font-black text-white text-2xl mb-4 leading-tight">
+              Robot Téléguidé LoRa<br><span class="text-lime text-base font-semibold">Réseau &amp; Systèmes Embarqués</span>
+            </h4>
+            <p class="text-text text-sm leading-relaxed mb-5">
+              Conception d'un robot pilotable via une interface web. Architecture matérielle et logicielle
+              basée sur deux cartes Arduino, un module de communication longue portée LoRa et un
+              Raspberry Pi faisant office de serveur web. Intégration d'un capteur à ultrasons renvoyant
+              la distance des obstacles en temps réel sur l'interface utilisateur.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tag border-lime/40 text-lime">ARDUINO</span>
+              <span class="tag border-lime/40 text-lime">RASPBERRY PI</span>
+              <span class="tag border-lime/40 text-lime">LORA</span>
+              <span class="tag border-lime/40 text-lime">SYSTÈMES EMBARQUÉS</span>
+            </div>
+
+            <p class="font-display text-xs text-muted tracking-widest mb-3">PHOTOS DU PROJET (CLIQUER POUR AGRANDIR)</p>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Projet Complet')">
+                <img src="assets/images/Robot+Lora+Arduino+Rasp.jpg" alt="Robot Lora — Projet Complet" class="absolute inset-0 w-full h-full object-cover">
+              </div>
+
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Châssis et moteurs')">
+                   <img src="assets/images/RobotMoteur.jpg" alt="Robot Lora — Châssis et moteurs" class="absolute inset-0 w-full h-full object-cover">
+              </div>
+
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Réception et écran Arduino')">
+                 <img src="assets/images/Arduino+ecran.jpg" alt="Robot Lora — Réception et écran Arduino" class="absolute inset-0 w-full h-full object-cover">
+              </div>
+            </div>
           </div>
-          <h4 class="font-display font-bold text-white text-base mb-2">[Nom du Projet Perso 2]</h4>
-          <p class="text-muted text-sm leading-relaxed mb-4">
-            Description de ce projet personnel. Objectif, techno utilisée, résultat.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tag border-lime/30 text-lime">React</span>
-            <span class="tag border-lime/30 text-lime">TailwindCSS</span>
-          </div>
-          <a href="#" class="text-xs font-display text-lime hover:underline">→ Voir le projet</a>
-        </article>
+        </div>
       </div>
+
+      <div class="reveal project-card rounded-sm p-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="tag border-magenta/40 text-magenta">HAUTE ÉCOLE · IESN HENALLUX</span>
+              <div class="flex items-center gap-2 text-xs font-display text-muted cursor-default select-none">
+                <svg class="w-4 h-4 opacity-40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span class="opacity-40">Dépôt privé</span>
+                <span class="border border-muted/30 text-muted px-2 py-0.5 rounded-sm" style="font-size:0.55rem;">🔒 ACADÉMIQUE</span>
+              </div>
+            </div>
+            <h4 class="font-display font-black text-white text-2xl mb-4 leading-tight">
+              Gestionnaire d'Applications<br><span class="text-magenta text-base font-semibold">Architecture N-Tier</span>
+            </h4>
+            <p class="text-text text-sm leading-relaxed mb-6">
+              Application lourde de gestion logicielle en équipe. Architecture stricte N-Tier (MVC Pur)
+              séparant la vue (Tkinter), la logique métier (Services) et l'accès aux données.
+              Implémentation de Threading asynchrone (Background workers &amp; callbacks) pour garantir
+              la fluidité de l'UI lors des requêtes lourdes sur une base de données PostgreSQL (psycopg).
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="tag border-magenta/40 text-magenta">PYTHON</span>
+              <span class="tag border-magenta/40 text-magenta">TKINTER</span>
+              <span class="tag border-magenta/40 text-magenta">POSTGRESQL</span>
+              <span class="tag border-magenta/40 text-magenta">ARCHITECTURE MVC</span>
+              <span class="tag border-magenta/40 text-magenta">THREADING</span>
+            </div>
+            <p class="text-xs text-muted font-display tracking-wider italic">
+              🔒 Dépôt privé — projet académique IESN Henallux. (Cliquer sur les images pour agrandir).
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <div class="media-placeholder h-48 lightbox-trigger overflow-hidden" title="Capture principale"
+                 onclick="openLightbox(this.querySelector('img').src, 'Tableau de bord principal')">
+              <img src="assets/images/MainApp.png" alt="Tableau de bord principal" class="w-full h-full object-cover">
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Liste et gestion des modules')">
+                <img src="assets/images/SoftwareList.png" alt="Liste et gestion des modules" class="w-full h-full object-cover">
+              </div>
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Logs de la base PostgreSQL')">
+                <img src="assets/images/DBSoftware.png" alt="Logs de la base PostgreSQL" class="w-full h-full object-cover">
+              </div>
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Formulaire d\'ajout de logiciel')">
+                <img src="assets/images/AddSoftware.png" alt="Formulaire d'ajout de logiciel" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <div class="neon-sep"></div>
 
 
-  <!-- ═══════════════════════════════════════════
-       SECTION — OBJECTIFS & TUNARY
-  ═══════════════════════════════════════════ -->
   <section id="goals" class="relative py-28 px-6 overflow-hidden">
 
-    <!-- Ambiance magenta -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 w-[600px] h-[600px] rounded-full blur-3xl opacity-5 pointer-events-none"
-         style="background: radial-gradient(circle, #ff00aa, transparent)"></div>
+         style="background:radial-gradient(circle,#ff00aa,transparent)"></div>
 
     <div class="max-w-6xl mx-auto relative z-10">
 
       <div class="reveal mb-16">
-        <p class="font-display text-xs text-cyan tracking-widest mb-3">// 03 — OBJECTIFS</p>
+        <p class="font-display text-xs text-cyan tracking-widest mb-3">// 04 — OBJECTIFS</p>
         <h2 class="font-display font-black text-4xl md:text-5xl text-white">OÙ JE VAIS</h2>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
 
-        <!-- Ambitions professionnelles -->
         <div class="reveal">
           <h3 class="font-display text-sm tracking-widest text-cyan mb-8">▸ AMBITIONS PROFESSIONNELLES</h3>
 
           <div class="space-y-6">
-
-            <!-- ✏️ Adapte chaque étape à ton vrai plan de carrière -->
             <div class="flex gap-5 group">
               <div class="flex flex-col items-center">
                 <div class="w-8 h-8 rounded-sm border border-cyan text-cyan font-display text-xs
-                            flex items-center justify-center font-bold flex-shrink-0 group-hover:bg-cyan group-hover:text-bg transition-all">01</div>
+                            flex items-center justify-center font-bold flex-shrink-0
+                            group-hover:bg-cyan group-hover:text-bg transition-all">01</div>
                 <div class="w-px flex-1 bg-border mt-2"></div>
               </div>
               <div class="pb-6">
-                <h4 class="font-display text-white text-sm font-bold mb-1">Court terme — [Année]</h4>
+                <h4 class="font-display text-white text-sm font-bold mb-1">Court terme — 2026-2027</h4>
                 <p class="text-muted text-sm leading-relaxed">
-                  <!-- ✏️ -->
-                  Décrocher une alternance ou un stage dans le développement web / la cybersécurité /
-                  [ton domaine cible] pour mettre en pratique mes connaissances et monter en compétences.
+                  Décrocher un stage enrichissant dans le développement logiciel, l'embarqué ou
+                  l'écosystème gaming afin de valider ma formation et d'appliquer mes compétences
+                  dans un contexte professionnel réel.
                 </p>
               </div>
             </div>
@@ -579,15 +781,16 @@
             <div class="flex gap-5 group">
               <div class="flex flex-col items-center">
                 <div class="w-8 h-8 rounded-sm border border-cyan text-cyan font-display text-xs
-                            flex items-center justify-center font-bold flex-shrink-0 group-hover:bg-cyan group-hover:text-bg transition-all">02</div>
+                            flex items-center justify-center font-bold flex-shrink-0
+                            group-hover:bg-cyan group-hover:text-bg transition-all">02</div>
                 <div class="w-px flex-1 bg-border mt-2"></div>
               </div>
               <div class="pb-6">
-                <h4 class="font-display text-white text-sm font-bold mb-1">Moyen terme — [Année]</h4>
+                <h4 class="font-display text-white text-sm font-bold mb-1">Moyen terme — 2027-2028</h4>
                 <p class="text-muted text-sm leading-relaxed">
-                  <!-- ✏️ -->
-                  Obtenir mon diplôme [Ton diplôme] et intégrer une entreprise tech innovante en tant que
-                  [poste visé] junior. Continuer à contribuer à des projets open-source.
+                  Évoluer vers le développement de jeux vidéo, l'écosystème gaming ou la tech au sens large
+                  en tant que développeur junior. Contribuer à des projets où passion et maîtrise technique
+                  se rejoignent.
                 </p>
               </div>
             </div>
@@ -595,75 +798,67 @@
             <div class="flex gap-5 group">
               <div class="flex flex-col items-center">
                 <div class="w-8 h-8 rounded-sm border border-lime text-lime font-display text-xs
-                            flex items-center justify-center font-bold flex-shrink-0 group-hover:bg-lime group-hover:text-bg transition-all">03</div>
+                            flex items-center justify-center font-bold flex-shrink-0
+                            group-hover:bg-lime group-hover:text-bg transition-all">03</div>
               </div>
               <div>
-                <h4 class="font-display text-white text-sm font-bold mb-1">Long terme — Vision</h4>
+                <h4 class="font-display text-white text-sm font-bold mb-1">Vision long terme</h4>
                 <p class="text-muted text-sm leading-relaxed">
-                  <!-- ✏️ -->
-                  Devenir un expert reconnu dans [ton domaine], créer de la valeur à l'intersection de
-                  la tech et du gaming, et faire de Tunary une structure Esport professionnelle.
+                  Devenir un actor reconnu à l'intersection de la tech, du gaming et de l'esport —
+                  que ce soit via le développement d'expériences de jeu, d'outils pour joueurs,
+                  ou en faisant de Tunary une structure esport professionnelle de référence.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Projet Tunary -->
         <div class="reveal">
-          <h3 class="font-display text-sm tracking-widest text-magenta mb-8">▸ PROJET TUNARY — ESPORT</h3>
+          <h3 class="font-display text-sm tracking-widest text-magenta mb-8">▸ PROJET TUNARY — STRUCTURE ESPORT</h3>
 
           <div class="border border-magenta/30 bg-magenta/5 rounded-sm p-8 hover:shadow-magenta-glow transition-all duration-500">
 
-            <!-- Logo / nom -->
             <div class="flex items-center gap-4 mb-6">
-              <!-- ✏️ Remplace ce bloc par le logo Tunary si tu en as un -->
-              <div class="w-14 h-14 rounded-sm border border-magenta flex items-center justify-center
-                          font-display font-black text-magenta text-xl">T</div>
+              <div class="w-16 h-16 rounded-sm border-2 border-magenta flex items-center justify-center
+                          font-display font-black text-magenta text-3xl shadow-magenta-glow">T</div>
               <div>
-                <h4 class="font-display font-black text-white text-xl tracking-widest">TUNARY</h4>
-                <p class="text-magenta text-xs font-display tracking-widest">STRUCTURE ESPORT</p>
+                <h4 class="font-display font-black text-white text-2xl tracking-widest">TUNARY</h4>
+                <p class="text-magenta text-xs font-display tracking-widest">STRUCTURE ESPORT — EN PRODUCTION</p>
               </div>
             </div>
 
-            <!-- Description -->
-            <p class="text-text text-sm leading-relaxed mb-6">
-              <!-- ✏️ Présente ton projet Tunary : concept, jeux ciblés, ambition, étape actuelle -->
-              Tunary est ma structure esport en cours de construction. Mon objectif : créer une organisation
-              sérieuse, bienveillante et ambitieuse, qui accompagne des joueurs talentueux vers
-              la compétition professionnelle tout en valorisant l'esprit d'équipe et les valeurs
-              sportives dans l'univers du gaming.
+            <p class="text-text text-sm leading-relaxed mb-5">
+              Tunary, c'est bien plus qu'un projet — c'est une ambition de <strong class="text-magenta">plus de 7 ans</strong>.
+              Co-fondé avec mon meilleur ami, nous portons ce nom dans nos pseudos depuis les débuts,
+              le temps de concevoir quelque chose de solide. Aujourd'hui, en parallèle de mes études,
+              nous passons à la vitesse supérieure.
             </p>
 
-            <!-- Infos clés -->
-            <div class="grid grid-cols-2 gap-4 mb-6">
+            <p class="text-text text-sm leading-relaxed mb-7">
+              Concrètement : gestion de communauté, déploiement de serveurs, développement de
+              <strong class="text-white">bots Discord personnalisés</strong> et infrastructure de tournoi. 
+              Les fondations techniques sont prêtes, et le concept reste pour le moment préservé en coulisses.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 mb-7">
               <div class="bg-bg/50 rounded-sm p-3 border border-border">
                 <p class="text-xs text-muted font-display tracking-wider mb-1">JEUX CIBLÉS</p>
-                <!-- ✏️ -->
-                <p class="text-white text-sm font-semibold">[Ex : Valorant, LoL…]</p>
+                <p class="text-white text-sm font-semibold">Valorant · RL · LoL · Fortnite</p>
               </div>
               <div class="bg-bg/50 rounded-sm p-3 border border-border">
                 <p class="text-xs text-muted font-display tracking-wider mb-1">STATUT</p>
-                <!-- ✏️ -->
-                <p class="text-lime text-sm font-semibold">[En construction / Actif]</p>
-              </div>
-              <div class="bg-bg/50 rounded-sm p-3 border border-border">
-                <p class="text-xs text-muted font-display tracking-wider mb-1">MEMBRES</p>
-                <!-- ✏️ -->
-                <p class="text-white text-sm font-semibold">[X joueurs]</p>
-              </div>
-              <div class="bg-bg/50 rounded-sm p-3 border border-border">
-                <p class="text-xs text-muted font-display tracking-wider mb-1">LANCÉ EN</p>
-                <!-- ✏️ -->
-                <p class="text-white text-sm font-semibold">[Année]</p>
+                <p class="text-magenta text-sm font-semibold">Concept secret 🔒</p>
               </div>
             </div>
 
-            <a href="#" class="inline-flex items-center gap-2 font-display text-xs tracking-widest
-                               text-magenta border border-magenta/40 px-5 py-3 rounded-sm
-                               hover:bg-magenta hover:text-bg transition-all duration-200">
-              ⚡ En savoir plus sur Tunary
-            </a>
+            <div class="flex">
+              <a href="tunary.html"
+                 class="inline-flex items-center gap-2 font-display text-xs tracking-widest
+                        text-magenta border border-magenta/50 px-6 py-3 rounded-sm bg-magenta/5
+                        hover:bg-magenta hover:text-bg hover:shadow-magenta-glow transition-all duration-300">
+                ⚡ Découvrir l'univers Tunary
+              </a>
+            </div>
           </div>
         </div>
 
@@ -674,82 +869,115 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
   <footer id="footer" class="py-20 px-6 bg-surface/50">
     <div class="max-w-6xl mx-auto">
 
       <div class="grid md:grid-cols-3 gap-12 mb-16">
 
-        <!-- Identité -->
         <div>
-          <p class="font-display font-bold text-cyan tracking-widest text-sm animate-flicker mb-4">
-            &lt;TON_PSEUDO /&gt;
+          <p class="font-display font-bold text-cyan tracking-widest text-sm animate-flicker mb-2">
+            Théo Rigaux
           </p>
-          <!-- ✏️ -->
-          <p class="text-muted text-sm leading-relaxed">
-            Étudiant en informatique, passionné de tech et de gaming.
-            Toujours prêt à apprendre, construire et innover.
+          <p class="text-xs font-display text-muted tracking-wider mb-4">THÉO RIGAUX · WALLONIE, BELGIQUE</p>
+          <p class="text-muted text-sm leading-relaxed mb-5">
+            Étudiant B2 Informatique (IESN Henallux). Passionné de tech, gamer, créateur de contenu
+            et co-fondateur de la structure esport Tunary. À la recherche d'un stage pour 2026-2027.
           </p>
+          <a href="assets/files/cv-theo-rigaux.pdf" download
+             class="inline-flex items-center gap-2 font-display text-xs tracking-widest
+                    border border-lime/40 text-lime px-4 py-2.5 rounded-sm
+                    hover:bg-lime hover:text-bg transition-all duration-200">
+            ↓ Télécharger mon CV (Version Publique)
+          </a>
         </div>
 
-        <!-- Navigation rapide -->
         <div>
-          <h5 class="font-display text-xs text-muted tracking-widest mb-5">NAVIGATION</h5>
-          <ul class="space-y-3 text-sm">
-            <li><a href="#about"    class="text-text hover:text-cyan transition-colors font-display text-xs tracking-wider">→ À propos</a></li>
-            <li><a href="#projects" class="text-text hover:text-cyan transition-colors font-display text-xs tracking-wider">→ Projets</a></li>
-            <li><a href="#goals"    class="text-text hover:text-cyan transition-colors font-display text-xs tracking-wider">→ Objectifs</a></li>
-          </ul>
+          <h5 class="font-display text-xs text-muted tracking-widest mb-5">LIENS PROFESSIONNELS</h5>
+          <div class="space-y-2">
+
+            <a href="https://www.linkedin.com/in/th%C3%A9o-rigaux-9aa1963b1" target="_blank" class="social-link">
+              <span class="abbr bg-blue-900/30 border border-blue-500/30 text-blue-400">LI</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">LinkedIn</p>
+                <p class="text-muted" style="font-size:0.6rem;">Théo Rigaux</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/TheoRigaux" target="_blank" class="social-link">
+              <span class="abbr bg-white/5 border border-white/10 text-white">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">GitHub</p>
+                <p class="text-muted" style="font-size:0.6rem;">TheoRigaux</p>
+              </div>
+            </a>
+
+            <a href="mailto:contact@theorigaux.be" class="social-link">
+              <span class="abbr bg-cyan/10 border border-cyan/20 text-cyan" style="font-size:0.7rem;">✉</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">E-mail</p>
+                <p class="text-muted" style="font-size:0.6rem;">contact@theorigaux.be</p>
+              </div>
+            </a>
+
+          </div>
         </div>
 
-        <!-- Contact & Liens -->
         <div>
-          <h5 class="font-display text-xs text-muted tracking-widest mb-5">ME RETROUVER</h5>
-          <ul class="space-y-3">
-            <!-- ✏️ Remplace les # par tes vraies URLs -->
-            <li>
-              <a href="https://github.com/TON_USERNAME" target="_blank"
-                 class="flex items-center gap-3 text-text hover:text-cyan transition-colors text-sm group">
-                <span class="font-display text-xs text-muted group-hover:text-cyan">GH</span>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/TON_PROFIL" target="_blank"
-                 class="flex items-center gap-3 text-text hover:text-cyan transition-colors text-sm group">
-                <span class="font-display text-xs text-muted group-hover:text-cyan">LI</span>
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="mailto:ton@email.com"
-                 class="flex items-center gap-3 text-text hover:text-cyan transition-colors text-sm group">
-                <span class="font-display text-xs text-muted group-hover:text-cyan">✉</span>
-                <!-- ✏️ -->
-                ton@email.com
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank"
-                 class="flex items-center gap-3 text-text hover:text-magenta transition-colors text-sm group">
-                <span class="font-display text-xs text-muted group-hover:text-magenta">TS</span>
-                Tunary — Discord / Réseau
-              </a>
-            </li>
-          </ul>
+          <h5 class="font-display text-xs text-muted tracking-widest mb-1">CRÉATION DE CONTENU</h5>
+          <p class="text-xs text-magenta font-display tracking-widest mb-5">TUNARYJUMP</p>
+
+          <div class="space-y-2 mb-5">
+            <a href="https://www.youtube.com/@TunaryJump" target="_blank" class="social-link hover:border-red-500/40">
+              <span class="abbr bg-red-900/30 border border-red-500/30 text-red-400" style="font-size:0.6rem;">YT</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">YouTube Principal</p>
+                <p class="text-muted" style="font-size:0.6rem;">@TunaryJump — Formats courts · 3×/sem</p>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@tunaryjumprediff" target="_blank" class="social-link hover:border-red-500/40">
+              <span class="abbr bg-red-900/30 border border-red-500/30 text-red-400" style="font-size:0.6rem;">YT</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">YouTube Rediffusions</p>
+                <p class="text-muted" style="font-size:0.6rem;">@tunaryjumprediff — VODs complètes</p>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@tunaryjump" target="_blank" class="social-link hover:border-white/20">
+              <span class="abbr bg-white/5 border border-white/10 text-white" style="font-size:0.6rem;">TK</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">TikTok</p>
+                <p class="text-muted" style="font-size:0.6rem;">@tunaryjump</p>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/tunaryjump" target="_blank" class="social-link hover:border-pink-500/40">
+              <span class="abbr bg-pink-900/20 border border-pink-500/30 text-pink-400" style="font-size:0.6rem;">IG</span>
+              <div>
+                <p class="text-white text-xs font-display tracking-wide">Instagram</p>
+                <p class="text-muted" style="font-size:0.6rem;">@tunaryjump</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="border border-magenta/20 bg-magenta/5 rounded-sm p-3">
+            <p class="font-display text-xs text-magenta tracking-widest mb-1">PLANNING CONTENU</p>
+            <p class="text-muted text-xs leading-relaxed">
+              🎮 <span class="text-text">Stream</span> — 2×/semaine · Valorant, Rocket League, LoL, Fortnite<br>
+              🎬 <span class="text-text">Formats courts</span> — 3×/semaine · Clips &amp; highlights
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Bas de footer -->
       <div class="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-muted text-xs font-display tracking-widest">
-          <!-- ✏️ -->
-          © 2025 [TON PRÉNOM / PSEUDO] — TOUS DROITS RÉSERVÉS
+          © 2026 THÉO RIGAUX · TUNARYJUMP — TOUS DROITS RÉSERVÉS
         </p>
         <p class="text-muted text-xs font-display tracking-widest">
-          BUILT WITH <span class="text-cyan">HTML5</span> + <span class="text-cyan">TAILWIND CSS</span>
+          BUILT WITH <span class="text-cyan">HTML5</span> + <span class="text-cyan">TAILWIND CSS</span> · IESN HENALLUX
         </p>
       </div>
 
@@ -757,11 +985,22 @@
   </footer>
 
 
-  <!-- ═══════════════════════════════════════════
-       JAVASCRIPT — Interactions
-  ═══════════════════════════════════════════ -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-[9999] hidden flex-col items-center justify-center p-4 backdrop-blur-md" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-4xl font-display hover:text-cyan transition-colors" onclick="closeLightbox()">✕</button>
+    
+    <div class="max-w-4xl max-h-[80vh] flex items-center justify-center relative" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[75vh] rounded-sm border border-border hidden shadow-cyan-glow">
+      
+      <div id="lightbox-video-container" class="w-[360px] h-[640px] max-w-full max-h-[75vh] rounded-sm overflow-hidden border border-border hidden bg-black shadow-magenta-glow">
+        <iframe id="lightbox-video" src="" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <p id="lightbox-caption" class="font-display text-xs tracking-widest text-cyan mt-4 bg-surface/80 border border-border px-4 py-2 rounded-sm"></p>
+  </div>
+
+
   <script>
-    // ── Burger menu mobile ──
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -775,7 +1014,6 @@
       burger.textContent = '☰';
     }
 
-    // ── Scroll reveal ──
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -784,24 +1022,18 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
-
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // ── Navbar : opacité au scroll ──
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        nav.style.borderBottomColor = 'rgba(0,240,255,0.15)';
-      } else {
-        nav.style.borderBottomColor = '';
-      }
+      nav.style.borderBottomColor = window.scrollY > 50
+        ? 'rgba(0,240,255,0.15)'
+        : '';
     });
 
-    // ── Lien actif dans la nav ──
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(sec => {
@@ -811,6 +1043,43 @@
         link.style.color = link.getAttribute('href') === `#${current}` ? '#00f0ff' : '';
       });
     });
+
+    // ── FONCTIONS LIGHTBOX (Gérer l'affichage plein écran) ──
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideoContainer = document.getElementById('lightbox-video-container');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    function openLightbox(src, caption) {
+      // Masquer la vidéo, afficher l'image
+      lightboxVideoContainer.classList.add('hidden');
+      lightboxVideo.src = ""; // Stop la vidéo si elle tournait
+      lightboxImg.classList.remove('hidden');
+      
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption.toUpperCase();
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    }
+
+    function openVideoLightbox(videoID) {
+      // Masquer l'image, afficher la vidéo
+      lightboxImg.classList.add('hidden');
+      lightboxVideoContainer.classList.remove('hidden');
+      
+      lightboxVideo.src = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
+      lightboxCaption.textContent = "DÉMO ROBOT LORA — FORMAT VERTICAL";
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightboxImg.src = "";
+      lightboxVideo.src = ""; // Coupe le son du stream YouTube à la fermeture
+    }
   </script>
 
 </body>
