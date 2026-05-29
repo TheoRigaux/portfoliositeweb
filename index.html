@@ -215,7 +215,6 @@
       flex-shrink: 0;
     }
 
-    /* Timeline formation */
     .timeline-item { position: relative; padding-left: 2rem; }
     .timeline-item::before {
       content: '';
@@ -240,7 +239,6 @@
     }
     .timeline-item:last-child::after { display: none; }
 
-    /* Skill category badge */
     .skill-badge {
       font-family: 'Orbitron', sans-serif;
       font-size: 0.6rem;
@@ -250,14 +248,15 @@
       border: 1px solid;
       white-space: nowrap;
     }
+
+    /* Styles d'agrandissement au survol pour indiquer le clic */
+    .lightbox-trigger { cursor: pointer; transition: transform 0.3s, border-color 0.3s; }
+    .lightbox-trigger:hover { transform: scale(1.02); border-color: #00f0ff; }
   </style>
 </head>
 
 <body class="min-h-screen">
 
-  <!-- ══════════════════════════════════════
-       NAVBAR
-  ══════════════════════════════════════ -->
   <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/70">
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
 
@@ -273,7 +272,7 @@
       </ul>
 
       <div class="hidden md:flex items-center gap-3">
-        <a href="cv-theo-rigaux.pdf" download
+        <a href="assets/files/cv-theo-rigaux.pdf" download
            class="inline-flex items-center gap-2 text-xs font-display tracking-widest
                   border border-lime/50 text-lime px-4 py-2 rounded-sm
                   hover:bg-lime hover:text-bg transition-all duration-200">
@@ -296,15 +295,12 @@
         <li><a href="#projects" class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Projets</a></li>
         <li><a href="#goals"    class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Objectifs</a></li>
         <li><a href="#footer"   class="block px-6 py-4 border-b border-border text-muted hover:text-cyan transition-colors" onclick="closeMobile()">Contact</a></li>
-        <li><a href="cv-theo-rigaux.pdf" download class="block px-6 py-4 text-lime font-display text-xs tracking-widest">↓ Télécharger CV</a></li>
+        <li><a href="assets/files/cv-theo-rigaux.pdf" download class="block px-6 py-4 text-lime font-display text-xs tracking-widest">↓ Télécharger CV</a></li>
       </ul>
     </div>
   </nav>
 
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════ -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-6 pt-16 overflow-hidden">
 
     <div class="absolute top-1/3 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-10 animate-pulse-slow"
@@ -342,7 +338,7 @@
                   hover:shadow-cyan-glow transition-all duration-300">
           <span>→</span> Voir mes projets
         </a>
-        <a href="cv-theo-rigaux.pdf" download
+        <a href="assets/files/cv-theo-rigaux.pdf" download
            class="inline-flex items-center justify-center gap-2
                   border border-lime text-lime font-display text-xs tracking-widest
                   px-8 py-4 rounded-sm
@@ -368,9 +364,6 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ══════════════════════════════════════
-       À PROPOS
-  ══════════════════════════════════════ -->
   <section id="about" class="relative py-28 px-6">
     <div class="max-w-6xl mx-auto">
 
@@ -379,7 +372,6 @@
         <h2 class="font-display font-black text-4xl md:text-5xl text-white">MON UNIVERS</h2>
       </div>
 
-      <!-- Bio + Badges -->
       <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
 
         <div class="reveal space-y-5 text-text leading-relaxed">
@@ -411,14 +403,12 @@
             <span class="tag border-magenta/40 text-magenta">STREAMING</span>
           </div>
 
-          <!-- Localisation -->
           <div class="flex items-center gap-2 pt-2 text-muted text-xs font-display tracking-wider">
             <span class="text-cyan">📍</span>
             <span>Wallonie, Belgique</span>
           </div>
         </div>
 
-        <!-- Statistiques rapides -->
         <div class="reveal">
           <div class="grid grid-cols-3 gap-4 mb-10">
             <div class="text-center border border-border rounded-sm p-4 bg-surface/50">
@@ -435,13 +425,12 @@
             </div>
           </div>
 
-          <!-- CV CTA dans l'aside -->
           <div class="border border-lime/20 bg-lime/5 rounded-sm p-5 flex items-center justify-between gap-4">
             <div>
               <p class="font-display text-xs text-lime tracking-widest mb-1">MON CV</p>
               <p class="text-muted text-xs leading-relaxed">Version publique — disponible en téléchargement.</p>
             </div>
-            <a href="cv-theo-rigaux.pdf" download
+            <a href="assets/files/cv-theo-rigaux.pdf" download
                class="flex-shrink-0 inline-flex items-center gap-2 font-display text-xs tracking-widest
                       bg-lime text-bg px-4 py-2.5 rounded-sm font-bold hover:shadow-lime-glow transition-all duration-200">
               ↓ CV
@@ -450,7 +439,6 @@
         </div>
       </div>
 
-      <!-- ── Formation chronologique ── -->
       <div class="reveal mb-16">
         <p class="font-display text-xs text-cyan tracking-widest mb-2">// PARCOURS</p>
         <h3 class="font-display font-black text-2xl text-white mb-10">FORMATION</h3>
@@ -491,7 +479,6 @@
         </div>
       </div>
 
-      <!-- ── Certifications ── -->
       <div class="reveal">
         <p class="font-display text-xs text-cyan tracking-widest mb-2">// CERTIFICATIONS</p>
         <h3 class="font-display font-black text-2xl text-white mb-8">FORMATIONS COMPLÉMENTAIRES</h3>
@@ -523,9 +510,6 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ══════════════════════════════════════
-       COMPÉTENCES
-  ══════════════════════════════════════ -->
   <section id="skills" class="relative py-28 px-6 bg-surface/20">
     <div class="max-w-6xl mx-auto">
 
@@ -536,7 +520,6 @@
 
       <div class="space-y-10">
 
-        <!-- Système & Admin -->
         <div class="reveal">
           <h3 class="font-display text-xs text-cyan tracking-widest mb-4">▸ SYSTÈME &amp; ADMINISTRATION</h3>
           <div class="flex flex-wrap gap-2">
@@ -548,7 +531,6 @@
           </div>
         </div>
 
-        <!-- Réseaux -->
         <div class="reveal">
           <h3 class="font-display text-xs text-lime tracking-widest mb-4">▸ RÉSEAUX &amp; TÉLÉCOMS</h3>
           <div class="flex flex-wrap gap-2">
@@ -558,7 +540,6 @@
           </div>
         </div>
 
-        <!-- Développement -->
         <div class="reveal">
           <h3 class="font-display text-xs text-magenta tracking-widest mb-4">▸ DÉVELOPPEMENT &amp; PROGRAMMATION</h3>
           <div class="flex flex-wrap gap-2">
@@ -572,7 +553,6 @@
           </div>
         </div>
 
-        <!-- Données -->
         <div class="reveal">
           <h3 class="font-display text-xs text-cyan tracking-widest mb-4">▸ DONNÉES</h3>
           <div class="flex flex-wrap gap-2">
@@ -581,7 +561,6 @@
           </div>
         </div>
 
-        <!-- Création & Soft Skills -->
         <div class="reveal">
           <h3 class="font-display text-xs text-lime tracking-widest mb-4">▸ CRÉATION DE CONTENU &amp; SOFT SKILLS</h3>
           <div class="flex flex-wrap gap-2">
@@ -600,9 +579,6 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ══════════════════════════════════════
-       PROJETS
-  ══════════════════════════════════════ -->
   <section id="projects" class="relative py-28 px-6">
     <div class="max-w-6xl mx-auto">
 
@@ -611,7 +587,6 @@
         <h2 class="font-display font-black text-4xl md:text-5xl text-white">CE QUE J'AI CONSTRUIT</h2>
       </div>
 
-      <!-- ── Projet 1 : Battle Sheep ── -->
       <div class="reveal project-card rounded-sm p-8 mb-6">
         <div class="flex items-center justify-between mb-5">
           <span class="tag border-cyan/40 text-cyan">UNIVERSITÉ · UNAMUR</span>
@@ -637,10 +612,7 @@
         </div>
       </div>
 
-      <!-- ── Projet 2 : Robot LoRa ── -->
       <div class="reveal project-card rounded-sm p-8 mb-6">
-
-        <!-- En-tête : tag + GitHub (pleine largeur) -->
         <div class="flex items-center justify-between mb-6">
           <span class="tag border-lime/40 text-lime">HAUTE ÉCOLE · IESN HENALLUX</span>
           <a href="https://github.com/TheoRigaux/projet-robot-lora" target="_blank"
@@ -650,16 +622,13 @@
           </a>
         </div>
 
-        <!-- Corps : 2 colonnes sur desktop -->
         <div class="flex flex-col lg:flex-row gap-8 items-start">
-
-          <!-- ── Colonne gauche : vidéo verticale ── -->
           <div class="w-full lg:w-48 flex-shrink-0">
             <p class="font-display text-xs text-muted tracking-widest mb-2">DÉMO VIDÉO</p>
-            <!-- Lecteur vertical 9/16 -->
-            <div class="relative w-full rounded-sm overflow-hidden border border-border bg-bg"
+            <div class="relative w-full rounded-sm overflow-hidden border border-border bg-bg mb-2"
                  style="aspect-ratio:9/16;">
               <iframe
+                id="robot-video"
                 src="https://www.youtube.com/embed/63XcM4CdG_I"
                 title="Démo Robot LoRa"
                 frameborder="0"
@@ -668,9 +637,12 @@
                 class="absolute inset-0 w-full h-full">
               </iframe> 
             </div>
+            <button onclick="openVideoLightbox('63XcM4CdG_I')" 
+                    class="w-full text-center font-display text-[0.65rem] tracking-widest border border-border py-1.5 bg-surface/40 rounded-sm hover:border-lime/40 text-muted hover:text-white transition-all">
+              🔍 AGRANDIR LA VIDÉO
+            </button>
           </div>
 
-          <!-- ── Colonne droite : description + grille images ── -->
           <div class="flex-1 min-w-0">
             <h4 class="font-display font-black text-white text-2xl mb-4 leading-tight">
               Robot Téléguidé LoRa<br><span class="text-lime text-base font-semibold">Réseau &amp; Systèmes Embarqués</span>
@@ -688,41 +660,27 @@
               <span class="tag border-lime/40 text-lime">SYSTÈMES EMBARQUÉS</span>
             </div>
 
-            <!-- Grille 3 images : 3 colonnes × 1 ligne -->
-            <p class="font-display text-xs text-muted tracking-widest mb-3">PHOTOS DU PROJET</p>
+            <p class="font-display text-xs text-muted tracking-widest mb-3">PHOTOS DU PROJET (CLIQUER POUR AGRANDIR)</p>
             <div class="grid grid-cols-3 gap-2">
-
-              <!-- Image 1 -->
-              <div class="relative rounded-sm overflow-hidden border border-border bg-surface
-                          group cursor-pointer transition-all duration-200
-                          hover:border-lime/40 hover:shadow-[0_0_12px_rgba(168,255,62,0.1)]"
-                   style="aspect-ratio:4/3;">
-                <img src="assets/images/Robot+Lora+Arduino+Rasp.jpg" alt="Photo 1" class="absolute inset-0 w-full h-full object-cover">
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Projet Complet')">
+                <img src="assets/images/Robot+Lora+Arduino+Rasp.jpg" alt="Robot Lora — Projet Complet" class="absolute inset-0 w-full h-full object-cover">
               </div>
 
-              <!-- Image 2 -->
-              <div class="relative rounded-sm overflow-hidden border border-border bg-surface
-                          group cursor-pointer transition-all duration-200
-                          hover:border-lime/40 hover:shadow-[0_0_12px_rgba(168,255,62,0.1)]"
-                   style="aspect-ratio:4/3;">
-                   <img src="assets/images/RobotMoteur.jpg" alt="Photo 2" class="absolute inset-0 w-full h-full object-cover">
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Châssis et moteurs')">
+                   <img src="assets/images/RobotMoteur.jpg" alt="Robot Lora — Châssis et moteurs" class="absolute inset-0 w-full h-full object-cover">
               </div>
 
-              <!-- Image 3 -->
-              <div class="relative rounded-sm overflow-hidden border border-border bg-surface
-                          group cursor-pointer transition-all duration-200
-                          hover:border-lime/40 hover:shadow-[0_0_12px_rgba(168,255,62,0.1)]"
-                   style="aspect-ratio:4/3;">
-                 <img src="assets/images/Arduino+ecran.jpg" alt="Photo 3" class="absolute inset-0 w-full h-full object-cover">
+              <div class="relative rounded-sm overflow-hidden border border-border bg-surface lightbox-trigger"
+                   style="aspect-ratio:4/3;" onclick="openLightbox(this.querySelector('img').src, 'Robot Lora — Réception et écran Arduino')">
+                 <img src="assets/images/Arduino+ecran.jpg" alt="Robot Lora — Réception et écran Arduino" class="absolute inset-0 w-full h-full object-cover">
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- ── Projet 3 : Gestionnaire N-Tier ── -->
       <div class="reveal project-card rounded-sm p-8">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
           <div>
@@ -751,24 +709,27 @@
               <span class="tag border-magenta/40 text-magenta">THREADING</span>
             </div>
             <p class="text-xs text-muted font-display tracking-wider italic">
-              🔒 Dépôt privé — projet académique IESN Henallux.
+              🔒 Dépôt privé — projet académique IESN Henallux. (Cliquer sur les images pour agrandir).
             </p>
           </div>
 
-          <!-- Galerie captures d'écran -->
           <div class="space-y-3">
-            <div class="media-placeholder h-48" title="Capture principale de l'application">
-              <img src="assets/images/MainApp.png" alt="Vue principale" class="w-full h-full object-cover rounded">
+            <div class="media-placeholder h-48 lightbox-trigger overflow-hidden" title="Capture principale"
+                 onclick="openLightbox(this.querySelector('img').src, 'Tableau de bord principal')">
+              <img src="assets/images/MainApp.png" alt="Tableau de bord principal" class="w-full h-full object-cover">
             </div>
             <div class="grid grid-cols-3 gap-2">
-              <div class="media-placeholder h-24">
-                <img src="assets/images/SoftwareList.png" alt="Liste" class="w-full h-full object-cover rounded">
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Liste et gestion des modules')">
+                <img src="assets/images/SoftwareList.png" alt="Liste et gestion des modules" class="w-full h-full object-cover">
               </div>
-              <div class="media-placeholder h-24">
-                <img src="assets/images/DBSoftware.png" alt="Base de données" class="w-full h-full object-cover rounded">
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Logs de la base PostgreSQL')">
+                <img src="assets/images/DBSoftware.png" alt="Logs de la base PostgreSQL" class="w-full h-full object-cover">
               </div>
-              <div class="media-placeholder h-24">
-                <img src="assets/images/AddSoftware.png" alt="Services" class="w-full h-full object-cover rounded">
+              <div class="media-placeholder h-24 lightbox-trigger overflow-hidden"
+                   onclick="openLightbox(this.querySelector('img').src, 'Formulaire d\'ajout de logiciel')">
+                <img src="assets/images/AddSoftware.png" alt="Formulaire d'ajout de logiciel" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -781,9 +742,6 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ══════════════════════════════════════
-       OBJECTIFS & TUNARY
-  ══════════════════════════════════════ -->
   <section id="goals" class="relative py-28 px-6 overflow-hidden">
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -799,7 +757,6 @@
 
       <div class="grid lg:grid-cols-2 gap-12">
 
-        <!-- Ambitions pro -->
         <div class="reveal">
           <h3 class="font-display text-sm tracking-widest text-cyan mb-8">▸ AMBITIONS PROFESSIONNELLES</h3>
 
@@ -815,7 +772,7 @@
                 <h4 class="font-display text-white text-sm font-bold mb-1">Court terme — 2026-2027</h4>
                 <p class="text-muted text-sm leading-relaxed">
                   Décrocher un stage enrichissant dans le développement logiciel, l'embarqué ou
-                  l'écosystème gaming afin de valider ma formation B2 et d'appliquer mes compétences
+                  l'écosystème gaming afin de valider ma formation et d'appliquer mes compétences
                   dans un contexte professionnel réel.
                 </p>
               </div>
@@ -847,7 +804,7 @@
               <div>
                 <h4 class="font-display text-white text-sm font-bold mb-1">Vision long terme</h4>
                 <p class="text-muted text-sm leading-relaxed">
-                  Devenir un acteur reconnu à l'intersection de la tech, du gaming et de l'esport —
+                  Devenir un actor reconnu à l'intersection de la tech, du gaming et de l'esport —
                   que ce soit via le développement d'expériences de jeu, d'outils pour joueurs,
                   ou en faisant de Tunary une structure esport professionnelle de référence.
                 </p>
@@ -856,7 +813,6 @@
           </div>
         </div>
 
-        <!-- Tunary -->
         <div class="reveal">
           <h3 class="font-display text-sm tracking-widest text-magenta mb-8">▸ PROJET TUNARY — STRUCTURE ESPORT</h3>
 
@@ -867,23 +823,21 @@
                           font-display font-black text-magenta text-3xl shadow-magenta-glow">T</div>
               <div>
                 <h4 class="font-display font-black text-white text-2xl tracking-widest">TUNARY</h4>
-                <p class="text-magenta text-xs font-display tracking-widest">STRUCTURE ESPORT — EN CONSTRUCTION</p>
+                <p class="text-magenta text-xs font-display tracking-widest">STRUCTURE ESPORT — EN PRODUCTION</p>
               </div>
             </div>
 
             <p class="text-text text-sm leading-relaxed mb-5">
               Tunary, c'est bien plus qu'un projet — c'est une ambition de <strong class="text-magenta">plus de 7 ans</strong>.
               Co-fondé avec mon meilleur ami, nous portons ce nom dans nos pseudos depuis les débuts,
-              le temps de construire quelque chose de solide. Aujourd'hui, en parallèle de nos études,
+              le temps de concevoir quelque chose de solide. Aujourd'hui, en parallèle de mes études,
               nous passons à la vitesse supérieure.
             </p>
 
             <p class="text-text text-sm leading-relaxed mb-7">
               Concrètement : gestion de communauté, déploiement de serveurs, développement de
-              <strong class="text-white">bots Discord personnalisés</strong> et infrastructure esport complète.
-              L'objectif est de créer une organisation <strong class="text-white">sérieuse, bienveillante et ambitieuse</strong>,
-              qui accompagne des joueurs talentueux vers la compétition professionnelle en valorisant
-              l'esprit d'équipe.
+              <strong class="text-white">bots Discord personnalisés</strong> et infrastructure de tournoi. 
+              Les fondations techniques sont prêtes, et le concept reste pour le moment préservé en coulisses.
             </p>
 
             <div class="grid grid-cols-2 gap-3 mb-7">
@@ -893,30 +847,16 @@
               </div>
               <div class="bg-bg/50 rounded-sm p-3 border border-border">
                 <p class="text-xs text-muted font-display tracking-wider mb-1">STATUT</p>
-                <p class="text-lime text-sm font-semibold animate-pulse">En construction ⚡</p>
-              </div>
-              <div class="bg-bg/50 rounded-sm p-3 border border-border">
-                <p class="text-xs text-muted font-display tracking-wider mb-1">PROJET LANCÉ</p>
-                <p class="text-white text-sm font-semibold">Il y a plus de 7 ans</p>
-              </div>
-              <div class="bg-bg/50 rounded-sm p-3 border border-border">
-                <p class="text-xs text-muted font-display tracking-wider mb-1">TECH</p>
-                <p class="text-white text-sm font-semibold">Bots Discord · Infra · Web</p>
+                <p class="text-magenta text-sm font-semibold">Concept secret 🔒</p>
               </div>
             </div>
 
-            <div class="flex gap-3 flex-wrap">
-              <a href="#"
+            <div class="flex">
+              <a href="tunary.html"
                  class="inline-flex items-center gap-2 font-display text-xs tracking-widest
-                        text-magenta border border-magenta/40 px-4 py-2.5 rounded-sm
-                        hover:bg-magenta hover:text-bg transition-all duration-200">
-                ▶ Suivre Tunary
-              </a>
-              <a href="#"
-                 class="inline-flex items-center gap-2 font-display text-xs tracking-widest
-                        text-text border border-border px-4 py-2.5 rounded-sm
-                        hover:border-magenta/40 hover:text-magenta transition-all duration-200">
-                Discord Tunary
+                        text-magenta border border-magenta/50 px-6 py-3 rounded-sm bg-magenta/5
+                        hover:bg-magenta hover:text-bg hover:shadow-magenta-glow transition-all duration-300">
+                ⚡ Découvrir l'univers Tunary
               </a>
             </div>
           </div>
@@ -929,15 +869,11 @@
   <div class="neon-sep"></div>
 
 
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
   <footer id="footer" class="py-20 px-6 bg-surface/50">
     <div class="max-w-6xl mx-auto">
 
       <div class="grid md:grid-cols-3 gap-12 mb-16">
 
-        <!-- Identité -->
         <div>
           <p class="font-display font-bold text-cyan tracking-widest text-sm animate-flicker mb-2">
             Théo Rigaux
@@ -947,7 +883,7 @@
             Étudiant B2 Informatique (IESN Henallux). Passionné de tech, gamer, créateur de contenu
             et co-fondateur de la structure esport Tunary. À la recherche d'un stage pour 2026-2027.
           </p>
-          <a href="cv-theo-rigaux.pdf" download
+          <a href="assets/files/cv-theo-rigaux.pdf" download
              class="inline-flex items-center gap-2 font-display text-xs tracking-widest
                     border border-lime/40 text-lime px-4 py-2.5 rounded-sm
                     hover:bg-lime hover:text-bg transition-all duration-200">
@@ -955,7 +891,6 @@
           </a>
         </div>
 
-        <!-- Liens professionnels -->
         <div>
           <h5 class="font-display text-xs text-muted tracking-widest mb-5">LIENS PROFESSIONNELS</h5>
           <div class="space-y-2">
@@ -989,13 +924,11 @@
           </div>
         </div>
 
-        <!-- Création de contenu -->
         <div>
           <h5 class="font-display text-xs text-muted tracking-widest mb-1">CRÉATION DE CONTENU</h5>
           <p class="text-xs text-magenta font-display tracking-widest mb-5">TUNARYJUMP</p>
 
           <div class="space-y-2 mb-5">
-
             <a href="https://www.youtube.com/@TunaryJump" target="_blank" class="social-link hover:border-red-500/40">
               <span class="abbr bg-red-900/30 border border-red-500/30 text-red-400" style="font-size:0.6rem;">YT</span>
               <div>
@@ -1027,7 +960,6 @@
                 <p class="text-muted" style="font-size:0.6rem;">@tunaryjump</p>
               </div>
             </a>
-
           </div>
 
           <div class="border border-magenta/20 bg-magenta/5 rounded-sm p-3">
@@ -1053,9 +985,21 @@
   </footer>
 
 
-  <!-- ══════════════════════════════════════
-       JAVASCRIPT
-  ══════════════════════════════════════ -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-[9999] hidden flex-col items-center justify-center p-4 backdrop-blur-md" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-4xl font-display hover:text-cyan transition-colors" onclick="closeLightbox()">✕</button>
+    
+    <div class="max-w-4xl max-h-[80vh] flex items-center justify-center relative" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[75vh] rounded-sm border border-border hidden shadow-cyan-glow">
+      
+      <div id="lightbox-video-container" class="w-[360px] h-[640px] max-w-full max-h-[75vh] rounded-sm overflow-hidden border border-border hidden bg-black shadow-magenta-glow">
+        <iframe id="lightbox-video" src="" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <p id="lightbox-caption" class="font-display text-xs tracking-widest text-cyan mt-4 bg-surface/80 border border-border px-4 py-2 rounded-sm"></p>
+  </div>
+
+
   <script>
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1099,6 +1043,43 @@
         link.style.color = link.getAttribute('href') === `#${current}` ? '#00f0ff' : '';
       });
     });
+
+    // ── FONCTIONS LIGHTBOX (Gérer l'affichage plein écran) ──
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideoContainer = document.getElementById('lightbox-video-container');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    function openLightbox(src, caption) {
+      // Masquer la vidéo, afficher l'image
+      lightboxVideoContainer.classList.add('hidden');
+      lightboxVideo.src = ""; // Stop la vidéo si elle tournait
+      lightboxImg.classList.remove('hidden');
+      
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption.toUpperCase();
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    }
+
+    function openVideoLightbox(videoID) {
+      // Masquer l'image, afficher la vidéo
+      lightboxImg.classList.add('hidden');
+      lightboxVideoContainer.classList.remove('hidden');
+      
+      lightboxVideo.src = "https://www.youtube.com/embed/" + videoID + "?autoplay=1";
+      lightboxCaption.textContent = "DÉMO ROBOT LORA — FORMAT VERTICAL";
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightboxImg.src = "";
+      lightboxVideo.src = ""; // Coupe le son du stream YouTube à la fermeture
+    }
   </script>
 
 </body>
